@@ -1,0 +1,37 @@
+============================================================
+NHPREP DEPLOYMENT & DNS VERIFICATION LOG
+============================================================
+
+Date & Time: 2026-10-06 19:12:00 (IST)
+Project Directory: NHREP
+Project Name (Cloudflare Pages): iam-prep
+Production Pages URL: https://iam-prep.pages.dev/
+Target Custom Subdomain: https://iam.nhprep.com/
+Zone ID: c2b47bcc11a61345973d4fa3f78bac98
+
+--- DNS Configuration ---
+Record Type: CNAME
+Name: iam (iam.nhprep.com)
+Target: iam-prep.pages.dev
+Record ID: a646699bb2af1f226a9ab34d4a756508
+Proxy Status: Proxied (true)
+TTL: Auto (1)
+
+--- Cloudflare Pages Custom Domain ---
+Custom Domain ID: 93bbb5d3-f42c-4f46-be9f-efaa163ad5cc
+Domain Status: active
+Verification Status: active
+SSL Validation Status: active
+Certificate Authority: Google Trust Services
+
+--- Public DNS Verification ---
+Cloudflare (1.1.1.1): Resolved -> 104.21.32.219, 172.67.136.123
+Google (8.8.8.8):     Resolved -> 104.21.32.219, 172.67.136.123
+Quad9 (9.9.9.9):      Resolved -> 104.21.32.219, 172.67.136.123
+OpenDNS:              Resolved -> 104.21.32.219, 172.67.136.123
+
+--- HTTP Live Verification ---
+Edge Response: HTTP/1.1 200 OK
+CF-Ray: Verified Cloudflare Anycast Edge delivery
+Deployment Status: VERIFIED & LIVE
+============================================================

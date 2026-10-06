@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-brand-blue: var(--theme-brand-blue);
+  --color-brand-blue-light: var(--theme-brand-blue-light);
+  --color-brand-navy: var(--theme-brand-navy);
+  --color-brand-gray: var(--theme-brand-gray);
+  --color-brand-gray-light: var(--theme-brand-gray-light);
+  --color-brand-gray-muted: var(--theme-brand-gray-muted);
+  --color-brand-green: var(--theme-brand-green);
+  --color-brand-green-light: var(--theme-brand-green-light);
+}
+
+@layer base {
+  :root {
+    --theme-brand-blue: #1677E8;
+    --theme-brand-blue-light: #EFF6FF;
+    --theme-brand-navy: #14213D;
+    --theme-brand-gray: #6B7280;
+    --theme-brand-gray-light: #F8FAFC;
+    --theme-brand-gray-muted: #94A3B8;
+    --theme-brand-green: #22B573;
+    --theme-brand-green-light: #ECFDF3;
+  }
+  .dark {
+    --theme-brand-blue: #3b82f6;
+    --theme-brand-blue-light: #1e3a8a;
+    --theme-brand-navy: #f8fafc;
+    --theme-brand-gray: #94a3b8;
+    --theme-brand-gray-light: #0f172a;
+    --theme-brand-gray-muted: #475569;
+    --theme-brand-green: #22c55e;
+    --theme-brand-green-light: #064e3b;
+  }
+}
+@layer base {
+  html {
+    /* Prevent text inflation on mobile landscape */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    /* Prevent overscroll bounce on iOS */
+    overscroll-behavior: none;
+  }
+  body {
+    background-color: var(--color-brand-gray-light);
+    color: var(--color-brand-navy);
+    font-family: 'Inter', system-ui, sans-serif;
+    /* Prevent pull-to-refresh & overscroll bounce */
+    overscroll-behavior: none;
+    /* Remove 300ms tap delay */
+    touch-action: manipulation;
+    /* Smooth momentum scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+  }
+  .dark body {
+    background-color: #020617; /* slate-950 */
+    color: #f8fafc; /* slate-50 */
+  }
+  /* Remove tap highlight on mobile */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  /* Ensure inputs don't zoom on iOS when font-size < 16px */
+  input[type="text"],
+  input[type="search"],
+  input[type="email"],
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 10px;
+  }
+  .custom-scrollbar:hover::-webkit-scrollbar-thumb {
+    background-color: #94a3b8;
+  }
+  .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #334155;
+  }
+  .dark .custom-scrollbar:hover::-webkit-scrollbar-thumb {
+    background-color: #475569;
+  }
+  /* Hide scrollbar entirely for no-scrollbar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  /* Momentum scrolling for all scrollable containers */
+  .scroll-smooth-touch {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+}
+

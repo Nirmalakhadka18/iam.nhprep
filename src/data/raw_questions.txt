@@ -1,0 +1,416 @@
+21. What is the Principle of Least Privilege?
+Simple explanation
+The Principle of Least Privilege (PoLP) means giving a user, application, or device only the permissions it needs to perform its job—and no more.
+How it works
+For example, an employee who only needs to read customer records should receive read access rather than permission to modify or delete them.
+User → Role → Minimum Required Permissions → Resource
+Real-world example
+A junior developer may need access to a development database but should not automatically have administrator access to the production database.
+Interview answer
+"The Principle of Least Privilege means giving users or systems only the minimum permissions required to perform their tasks. It reduces the potential damage if an account is compromised or misused."
+Common mistake
+Least privilege does not mean giving everyone the same restricted access. Permissions should match the person's actual responsibilities.
+
+22. What is Role-Based Access Control?
+Simple explanation
+RBAC means permissions are assigned to roles, and users receive permissions through those roles.
+How it works
+User → Role → Permissions → Resource
+Example:
+Alice → HR Manager → Employee Records → Read/Update
+Real-world example
+In a company:
+HR Manager → HR records
+Developer → Development systems
+Finance Employee → Financial applications
+Interview answer
+"RBAC stands for Role-Based Access Control. Instead of assigning permissions individually to every user, permissions are grouped into roles and users are assigned those roles. This makes access easier to manage."
+Common mistake
+RBAC is an authorization model, not an authentication mechanism.
+
+23. What is Attribute-Based Access Control?
+Simple explanation
+ABAC makes access decisions using attributes and policies.
+Attributes can describe:
+User
+Device
+Resource
+Location
+Time
+Environment
+How it works
+User Attributes + Device Attributes + Resource + Context → Policy → Access Decision
+Real-world example
+A company might allow an employee to access a sensitive application only if:
+They are an authorized employee
+Their device is compliant
+They are using MFA
+The access comes from an approved context
+Interview answer
+"ABAC stands for Attribute-Based Access Control. It makes authorization decisions based on attributes of the user, resource, device, and environment, combined with policies."
+Common mistake
+ABAC is not simply "more roles." It uses attributes and policy conditions.
+
+24. RBAC vs ABAC — What is the Difference?
+Simple explanation
+RBAC:
+"Who are you in the organization?"
+ABAC:
+"What are your attributes and what is the current context?"
+Example
+RBAC:
+John → Manager → Access Report
+ABAC:
+John + Company Device + Approved Location + Working Hours → Access Report
+Interview answer
+"RBAC assigns permissions through predefined roles, while ABAC evaluates attributes and contextual conditions. RBAC is generally simpler, while ABAC can provide more fine-grained and dynamic authorization."
+
+25. What is Identity Lifecycle Management?
+Simple explanation
+Identity lifecycle management manages a user's identity from joining an organization until leaving it.
+Typical lifecycle
+Joiner → Mover → Leaver
+Joiner — new employee
+Mover — employee changes department or role
+Leaver — employee leaves
+Real-world example
+When an employee joins the finance department, they receive appropriate access. If they move to HR, finance permissions should be removed and HR permissions added.
+When they leave, their access should be revoked.
+Interview answer
+"Identity lifecycle management is the process of creating, modifying, reviewing, and removing identities and their access throughout a user's lifecycle in an organization."
+
+26. What is User Provisioning?
+Simple explanation
+Provisioning means creating an identity and giving it the appropriate access.
+Example
+New employee joins:
+HR System → Identity Created → Groups/Roles Assigned → Applications Provisioned
+Real-world example
+An employee joining a company may automatically receive:
+Email account
+Collaboration application
+HR application
+Required business applications
+Interview answer
+"User provisioning is the process of creating a user account and assigning the appropriate access to applications and resources based on the user's role."
+
+27. What is Deprovisioning?
+Simple explanation
+Deprovisioning means removing access when it is no longer required.
+Example
+Employee leaves → Account Disabled → Sessions Revoked → Application Access Removed
+Why it matters
+An old account that remains active can become a security risk.
+Interview answer
+"Deprovisioning is the process of removing or disabling a user's access when it is no longer required, such as when an employee leaves the organization."
+
+28. What is Access Review?
+Simple explanation
+An access review checks whether users still have the permissions they actually need.
+Example
+A manager receives a review:
+"Does John still require access to the finance application?"
+The manager can approve or remove the access.
+Interview answer
+"An access review is a periodic process of checking user permissions to make sure access is still appropriate and follows least privilege."
+
+29. What is Identity Governance?
+Simple explanation
+Identity Governance focuses on controlling and managing who should have access to what, why they have it, and whether that access remains appropriate.
+It commonly includes
+Access requests
+Approvals
+Access reviews
+Role management
+Separation of duties
+Compliance reporting
+Interview answer
+"Identity governance provides processes and controls for managing identity access throughout its lifecycle. It helps organizations ensure that users have appropriate access and that access can be reviewed and audited."
+
+30. What is Separation of Duties?
+Simple explanation
+Separation of Duties (SoD) means critical responsibilities should not be controlled by one person alone when that could create excessive risk.
+Example
+One employee requests a large payment.
+Another employee approves it.
+Flow
+Employee A → Request
+Employee B → Approve
+Interview answer
+"Separation of Duties reduces the risk of fraud or unauthorized activity by dividing sensitive responsibilities between different people or roles."
+
+31. What is Privileged Access?
+Simple explanation
+Privileged access allows someone to perform powerful administrative or security-sensitive actions.
+Examples:
+Creating users
+Changing security settings
+Modifying servers
+Managing databases
+Why it matters
+A compromised privileged account can cause significant damage.
+Interview answer
+"Privileged access refers to permissions that allow users to perform administrative or highly sensitive operations. Because these permissions are powerful, they should be tightly controlled and monitored."
+
+32. What is Privileged Access Management?
+Simple explanation
+PAM is a set of controls and technologies used to secure privileged accounts and privileged access.
+Typical flow
+Admin → PAM → Authentication → Approval/Policy → Temporary Access → Target System
+Features can include
+MFA
+Credential protection
+Session monitoring
+Just-in-time access
+Privileged account management
+Interview answer
+"PAM stands for Privileged Access Management. It protects privileged accounts and controls administrative access to sensitive systems."
+
+33. What is Just-In-Time Access?
+Simple explanation
+Just-In-Time (JIT) access provides privileged permissions only when they are needed and usually for a limited period.
+Example
+An administrator requests server access for 30 minutes.
+Request → Approval → Access Granted → 30 Minutes → Access Removed
+Interview answer
+"Just-In-Time access provides privileged permissions only for a required period instead of keeping permanent administrative access. This reduces the amount of time privileged permissions are available."
+
+34. What is Just-Enough Access?
+Simple explanation
+Just-Enough Access means giving a user exactly the permissions required for a specific task.
+JIT answers:
+"When should access be available?"
+Just-enough access answers:
+"How much access should be available?"
+Interview answer
+"Just-enough access means providing only the specific permissions required to complete a task, supporting the principle of least privilege."
+
+35. What is a Privileged Account?
+Simple explanation
+A privileged account has elevated permissions that ordinary users don't have.
+Examples:
+Domain administrator
+Cloud administrator
+Database administrator
+Root account
+Why it matters
+If compromised, it can provide extensive control over systems.
+Interview answer
+"A privileged account is an account with elevated permissions that can perform administrative or sensitive operations. These accounts require stronger controls and monitoring."
+
+36. What is Identity Federation?
+Simple explanation
+Identity federation allows users authenticated by one trusted identity system to access resources in another organization or security domain.
+Concept
+Organization A Identity Provider ↔ Trust Relationship ↔ Organization B Application
+Example
+A university student uses their university identity to access a third-party educational platform.
+Interview answer
+"Identity federation establishes trust between identity systems so that users can use an identity from one organization or domain to access services in another domain."
+
+37. What is SAML?
+Simple explanation
+SAML, or Security Assertion Markup Language, is a standard commonly used to exchange authentication and authorization-related information between an Identity Provider and a Service Provider.
+Simplified flow
+User → Identity Provider → SAML Assertion → Service Provider
+Example
+An employee signs into the company's identity provider and then accesses a SaaS application.
+Interview answer
+"SAML is an XML-based standard commonly used for exchanging identity information between an Identity Provider and a Service Provider, especially in enterprise SSO."
+
+38. What is OAuth 2.0?
+Simple explanation
+OAuth 2.0 is an authorization framework that allows an application to obtain limited access to a resource on behalf of a user or another entity.
+Example
+An application wants permission to access a user's selected data without receiving the user's password.
+Simplified flow
+User → Authorization Server → Access Token → Resource Server
+Interview answer
+"OAuth 2.0 is an authorization framework that allows a client to obtain limited access to protected resources using access tokens instead of directly handling the user's password."
+
+39. What is an Access Token?
+Simple explanation
+An access token is a credential used by a client to access protected resources.
+Flow
+Authorization → Access Token → Resource Request → Resource Server
+Example
+A mobile application receives an access token and uses it to request permitted information from an API.
+Interview answer
+"An access token is a credential that a client presents when requesting access to protected resources. The resource server uses the token and its associated permissions or scopes to determine what can be accessed."
+
+40. What is OpenID Connect?
+Simple explanation
+OpenID Connect (OIDC) is an identity layer built on top of OAuth 2.0.
+OAuth primarily addresses authorization.
+OIDC adds authentication and identity information.
+Flow
+User → OpenID Provider → ID Token → Application
+Interview answer
+"OpenID Connect is an authentication and identity protocol built on OAuth 2.0. It allows an application to verify the user's identity and obtain standardized identity information."
+
+41. What is an ID Token?
+Simple explanation
+An ID token is issued in OpenID Connect and contains claims about the authenticated user.
+It is intended for the client application to understand the user's authenticated identity.
+Important distinction
+ID Token → Identity information
+Access Token → Authorization to access resources
+Interview answer
+"An ID token is an OpenID Connect token that provides identity information about the authenticated user to the client application."
+
+42. What is Single Sign-On?
+Simple explanation
+Single Sign-On (SSO) allows a user to authenticate through an identity system and then access multiple connected applications without separately authenticating to each one.
+Example
+User → Identity Provider → Application A
+**                             → Application B**
+**                             → Application C**
+Interview answer
+"SSO allows users to authenticate through a central identity system and access multiple trusted applications without having to independently sign in to each application."
+
+43. What is Adaptive Authentication?
+Simple explanation
+Adaptive authentication adjusts authentication requirements based on risk and context.
+Example
+Normal login:
+Known user + trusted device → Password + MFA
+Suspicious login:
+New device + unusual location + high risk → Stronger verification
+Interview answer
+"Adaptive authentication changes authentication requirements based on factors such as device, location, behavior, or risk. Higher-risk situations can require stronger verification."
+
+44. What is Risk-Based Authentication?
+Simple explanation
+Risk-based authentication evaluates signals to estimate whether a login attempt appears risky.
+Possible signals:
+New device
+Unusual location
+Impossible travel
+Suspicious IP
+Unusual behavior
+Flow
+Login → Risk Evaluation → Low/Medium/High Risk → Authentication Decision
+Interview answer
+"Risk-based authentication evaluates contextual signals during login and can require additional verification or deny access when the risk is considered high."
+
+45. What is Conditional Access?
+Simple explanation
+Conditional Access makes access decisions based on conditions.
+For example:
+User + Device + Location + Risk → Policy → Allow / MFA / Block
+Real-world example
+A company may require MFA when an employee accesses a sensitive application from an unmanaged device.
+Interview answer
+"Conditional Access applies access policies based on conditions such as user identity, device compliance, location, application, and risk."
+
+46. What is Device Posture?
+Simple explanation
+Device posture describes the security and compliance state of a device.
+A company might check:
+Is the device managed?
+Is encryption enabled?
+Is the operating system supported?
+Is security software active?
+Is the device compliant?
+Flow
+Device → Security Checks → Compliance Result → Access Decision
+Interview answer
+"Device posture is the security state of a device. Organizations can evaluate factors such as management status, encryption, operating system, and security controls before allowing access."
+
+47. What is Continuous Verification in Zero Trust?
+Simple explanation
+Zero Trust does not assume that a user should automatically remain trusted after logging in.
+Access can be evaluated continuously based on identity, device, context, risk, and policy.
+Example
+A user successfully logs in.
+Later:
+Device becomes non-compliant → Risk increases → Access may be restricted
+Interview answer
+"Continuous verification means access decisions can be reevaluated as identity, device, context, or risk changes rather than treating the initial login as permanent trust."
+
+48. What is Micro-Segmentation?
+Simple explanation
+Micro-segmentation divides a network or environment into smaller security zones and controls communication between them.
+Example
+Instead of:
+All Users → All Servers
+You might have:
+Application Server → Only Required Database
+Why it matters
+If an attacker compromises one system, segmentation can limit their ability to move to other systems.
+Interview answer
+"Micro-segmentation divides environments into smaller security zones and applies policies to control communication between workloads or systems. It can reduce lateral movement after a compromise."
+
+49. What is an IAM Audit Log?
+Simple explanation
+An IAM audit log records important identity and access-related activities.
+Examples:
+Login
+Failed login
+MFA event
+Permission change
+Role assignment
+Account creation
+Account deletion
+Privileged access
+Example
+10:42 AM
+User: John
+Application: Finance
+Action: Login
+MFA: Successful
+Result: Allowed
+Interview answer
+"IAM audit logs record identity and access activities so organizations can investigate security events, troubleshoot access problems, and support monitoring and compliance."
+
+50. Explain a Complete IAM and Zero Trust Access Scenario
+This should be your final and strongest question because it tests whether the student can connect everything together.
+Scenario
+An employee wants to access a sensitive company application from their laptop while working remotely.
+Step-by-step flow
+1. Identity
+The employee provides their identity information.
+↓
+2. Authentication
+The Identity Provider verifies the user's credentials.
+↓
+3. MFA
+The user completes an additional authentication factor.
+↓
+4. Device Posture
+The organization checks whether the device meets required security conditions.
+↓
+5. Context
+The system evaluates relevant context such as location, application, and risk signals.
+↓
+6. Policy Evaluation
+The organization's access policies determine what should happen.
+↓
+7. Authorization
+The system determines whether the user is allowed to access the requested resource.
+↓
+8. Application Access
+If the required conditions are satisfied, access is provided.
+↓
+9. Continuous Evaluation
+If relevant conditions change—for example, the device becomes non-compliant—the organization may reevaluate or restrict access.
+Real-world example
+Imagine an employee accessing a company's financial application remotely.
+The employee has the correct identity, completes MFA, and uses a compliant company-managed laptop.
+The organization's policies evaluate these signals and permit access to the application.
+If the device later becomes non-compliant, the organization can respond according to its security policies.
+Strong fresher interview answer
+"In a Zero Trust environment, authentication is only one part of the access decision. First, the user's identity is verified, often using MFA. Then the organization can evaluate the device's security posture and other relevant contextual or risk signals. An authorization policy evaluates these conditions and determines whether the user should receive access to the requested application. Access can also be reevaluated when relevant conditions change. This follows the Zero Trust principle of not relying on implicit trust."
+Interview follow-ups
+Interviewer: Why isn't a password enough?
+Answer:
+Because passwords can be stolen or compromised. MFA provides an additional independent authentication factor.
+Interviewer: Does successful authentication automatically mean access should be granted?
+Answer:
+No. Authentication establishes or verifies identity; authorization determines whether that identity is permitted to access a particular resource.
+Interviewer: Why check the device?
+Answer:
+Because a valid user account does not guarantee that the device being used is secure or compliant.
+Interviewer: What happens if the device becomes non-compliant?
+Answer:
+Depending on the organization's policy, access could be restricted, require additional verification, or be denied.

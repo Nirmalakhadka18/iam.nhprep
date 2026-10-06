@@ -1,0 +1,150 @@
+================================================================================
+                    DAILY PROGRESS REPORT — MID DAY
+                    Project : IAMPrep (IAM & Zero Trust Interview Platform)
+                    Date    : October 01, 2026
+                    Time    : 15:25 IST (Mid-Day Report)
+                    Site    : https://iam-preparation-interview.pages.dev
+================================================================================
+
+OVERVIEW
+--------
+Today's session focused on expanding the IAMPrep platform from 20 questions
+to 50 questions (IAM & Zero Trust topic), polishing the visual simulator
+engine, and fixing image rendering across all new questions.
+
+--------------------------------------------------------------------------------
+SECTION 1 — FEATURES COMPLETED
+--------------------------------------------------------------------------------
+
+[✅] 1. QUESTION EXPANSION — Q21 to Q50 (30 New Questions)
+    - Created: d:\NHREP\src\data\questions2.ts
+    - Topics covered:
+        Q21  — Principle of Least Privilege (PoLP)
+        Q22  — Role-Based Access Control (RBAC)
+        Q23  — Attribute-Based Access Control (ABAC)
+        Q24  — RBAC vs ABAC Comparison
+        Q25  — Identity Lifecycle Management
+        Q26  — User Provisioning
+        Q27  — Deprovisioning
+        Q28  — Access Review
+        Q29  — Identity Governance
+        Q30  — Separation of Duties (SoD)
+        Q31  — Privileged Access (concept)
+        Q32  — Privileged Access Management (PAM)
+        Q33  — Just-in-Time Access (JIT) / Just Enough Admin (JEA)
+        Q34  — Identity Federation
+        Q35  — SAML
+        Q36  — OAuth 2.0
+        Q37  — OpenID Connect (OIDC)
+        Q38  — ID Tokens
+        Q39  — Single Sign-On (SSO)
+        Q40  — Adaptive Authentication
+        Q41  — Risk-Based Authentication
+        Q42  — Conditional Access
+        Q43  — Context-Aware Access
+        Q44  — Step-Up Authentication
+        Q45  — Conditional Access (policy focus)
+        Q46  — Device Posture
+        Q47  — Continuous Verification in Zero Trust
+        Q48  — Micro-Segmentation
+        Q49  — IAM Audit Log
+        Q50  — Complete IAM & Zero Trust Scenario
+
+    - Each question contains:
+        * Structured answer (definition, how it works, example, why important)
+        * Common mistakes to avoid
+        * Interview talking points
+        * Sample answer paragraph
+        * Visualization steps
+        * Interactive practice scenario with MCQ
+
+[✅] 2. SIDEBAR — PROGRESS COUNTER
+    - Sidebar now shows "50 Questions" badge instead of "20 Questions"
+    - Progress bar updates correctly across all 50 questions
+
+[✅] 3. SEARCH — CTRL+K KEYBOARD SHORTCUT
+    - Pressing Ctrl+K in the browser focuses the search bar instantly
+    - Implemented via keydown listener in Sidebar.tsx
+
+[✅] 4. ANIMATED SPLASH SCREEN
+    - Premium 3D pulsing shield animation on initial load
+    - Progress bar replaces generic "Loading..." text
+    - Implemented in: d:\NHREP\src\App.tsx
+
+[✅] 5. SMART IMAGE MAPPER — DefaultVisual Engine
+    - Built keyword-based image mapping for all 50 questions
+    - Q1-Q20: Use dedicated hand-coded Q{n}Visual components
+    - Q21-Q50: Use DefaultVisual with smart keyword parser
+    - Mapper matches step text to one of 31 3D isometric images
+
+[✅] 6. GETCOMMANDICON REBUILD — Visualizer.tsx
+    - The old getCustomIcon() only matched Q1-specific text
+    - Rebuilt with same 30+ keyword rules
+    - No more flat shield fallback for concepts that have images
+
+[✅] 7. NEW IMAGES GENERATED (Mid-Day — 10 New 3D Isometric Images)
+    - siem_alert.png        — SIEM dashboard with red alerts
+    - audit_log.png         — Digital log book with timestamps
+    - flat_network.png      — Traditional fully-connected network
+    - micro_segmented.png   — Isolated network security zones
+    - network_breach.png    — Hacker breaking through a barrier
+    - active_session.png    — User actively working in a session
+    - threat_detected.png   — Malware caught by detection system
+    - session_terminated.png— Broken session / disconnected
+    - posture_check.png     — Laptop checklist scan
+    - access_decision.png   — Allow/Deny decision gateway
+
+[⏳] 8. IMAGE COPY & MAPPER UPDATE (In Progress — Next Step)
+    - New images need to be copied to: d:\NHREP\public\assets\images\
+    - Mapper in CustomVisuals.tsx and Visualizer.tsx to be updated
+      with keywords for the 10 new images
+    - Final build + deploy to Cloudflare after image copy
+
+--------------------------------------------------------------------------------
+SECTION 2 — FILES MODIFIED TODAY
+--------------------------------------------------------------------------------
+
+  d:\NHREP\src\App.tsx                                 Splash screen animation
+  d:\NHREP\src\components\Sidebar.tsx                  Ctrl+K search shortcut
+  d:\NHREP\src\data\questions.ts                       Merged Q1-Q50
+  d:\NHREP\src\data\questions2.ts                      New file (Q21-Q50)
+  d:\NHREP\src\components\Visualizer.tsx               getCustomIcon rebuild
+  d:\NHREP\src\components\visualizations\
+    CustomVisuals.tsx                                  DefaultVisual + mapper
+
+--------------------------------------------------------------------------------
+SECTION 3 — DEPLOYMENTS TODAY
+--------------------------------------------------------------------------------
+
+  Deploy 1 (Q1-Q50 data merge)          SUCCESS
+  Deploy 2 (Smart image mapper v1)      FAILED  (Cloudflare auth timeout)
+  Deploy 3 (Smart image mapper v2)      SUCCESS
+  Deploy 4 (Visualizer rebuild)         SUCCESS
+      Live URL: https://iam-preparation-interview.pages.dev
+
+--------------------------------------------------------------------------------
+SECTION 4 — PENDING / NEXT STEPS
+--------------------------------------------------------------------------------
+
+  [ ] Copy 10 newly generated images to public/assets/images/
+  [ ] Add new keyword rules (siem, breach, flat network, micro-segment, etc.)
+      to both CustomVisuals.tsx and Visualizer.tsx
+  [ ] Final production build + deploy
+  [ ] Verify all 50 questions show correct 3D images in visual simulator
+  [ ] Optional: Apply same 3D image system to e:\NH_Preparation (Networking site)
+
+--------------------------------------------------------------------------------
+SECTION 5 — PLATFORM STATUS
+--------------------------------------------------------------------------------
+
+  Live URL  : https://iam-preparation-interview.pages.dev
+  Questions : 50 / 50
+  Categories: IAM Basics, Authentication, Access Control, Identity Lifecycle,
+              Protocols (SAML/OAuth/OIDC/SSO), Zero Trust, Identity Governance
+  Features  : Visual Lesson | Interview Answer | Practice MCQ
+              Animated Progress | Dark Mode | Mobile Optimized | Search (Ctrl+K)
+
+================================================================================
+                         END OF MID-DAY REPORT
+                         Next update: End-of-Day Report
+================================================================================
