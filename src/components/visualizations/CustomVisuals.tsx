@@ -833,7 +833,7 @@ const Q46Visual = ({ currentStep, isMobile }: any) => {
       <Arrow active={currentStep >= 1} color="indigo" />
       <GIcon imgSrc="/assets/images/posture_check.png" active={currentStep >= 1} label="Posture Check" subLabel="Agent Checks..." size="medium" color="indigo" />
       <Arrow active={currentStep >= 2} color="indigo" />
-      <GIcon imgSrc="/assets/images/abac_location_office_1790829555589.png" active={currentStep >= 2} label="Access Decision" subLabel="Encryption..." size="medium" color="indigo" />
+      <GIcon imgSrc="/assets/images/access_decision.png" active={currentStep >= 2} label="Access Decision" subLabel="Encryption..." size="medium" color="indigo" />
       </div>
     </div>
   );
