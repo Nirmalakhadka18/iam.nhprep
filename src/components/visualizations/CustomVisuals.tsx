@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import clsx from "clsx";
 import { Database } from "lucide-react";
 
-const GIcon = ({ active, label, subLabel, size = "medium", color = "blue", imgSrc, objectFit = "contain", imgClassName = "" }: any) => {
+const GIcon = ({ active, label, subLabel, size = "medium", color = "blue", imgSrc, objectFit = "contain", imgClassName = "", children }: any) => {
   const sizeClasses = { small: "w-20 h-20 lg:w-24 lg:h-24", medium: "w-24 h-24 lg:w-28 lg:h-28", large: "w-28 h-28 lg:w-36 lg:h-36" };
   const containerSizes = { small: "w-24 lg:w-28", medium: "w-28 lg:w-36", large: "w-36 lg:w-44" };
   return (
@@ -251,24 +251,26 @@ const Q10Visual = ({ currentStep, isMobile }: any) => {
 
 // Q11 Visual
 const Q11Visual = ({ currentStep, isMobile }: any) => {
-  return (
-    <div className="w-full h-full overflow-x-auto custom-scrollbar pb-4">
-      <div className="flex flex-row flex-nowrap items-center justify-center min-w-max w-full h-full px-4 lg:px-8 py-4 gap-2 lg:gap-4">
-      <GIcon imgSrc="/assets/images/employee_laptop.png" active={currentStep >= 0} label="Users (Alex" subLabel="Multiple Users..." size="small" color="cyan" />
-      <Arrow active={currentStep >= 1} color="cyan" />
-      <GIcon imgSrc="/assets/images/rbac_roles.png" active={currentStep >= 1} label="Sarah" subLabel="Assigned Role" size="small" color="cyan" />
-      <Arrow active={currentStep >= 2} color="cyan" />
-      <GIcon imgSrc="/assets/images/role_attribute.png" active={currentStep >= 2} label="John)" subLabel="" size="small" color="cyan" />
-      <Arrow active={currentStep >= 3} color="cyan" />
-      <GIcon imgSrc="/assets/images/access_decision.png" active={currentStep >= 3} label="Roles Assigned" subLabel="Finance)..." size="small" color="cyan" />
-      <Arrow active={currentStep >= 4} color="cyan" />
-      <GIcon imgSrc="/assets/images/access_granted.png" active={currentStep >= 4} label="Permissions Granted" subLabel="Permissions" size="small" color="cyan" />
-      <Arrow active={currentStep >= 5} color="cyan" />
-      <GIcon imgSrc="/assets/images/email_app.png" active={currentStep >= 5} label="Resources Accessed" subLabel="Access Payroll..." size="small" color="cyan" />
+    return (
+      <div className="w-full h-full overflow-x-auto custom-scrollbar pb-4">
+        <div className="flex flex-row flex-nowrap items-center justify-center min-w-max w-full h-full px-4 lg:px-8 py-4 gap-2 lg:gap-4">
+        <GIcon active={currentStep >= 0} label="Users" subLabel="Alex, Sarah, John" size="medium" color="cyan">
+          <div className="flex flex-wrap items-center justify-center w-full h-full p-2 bg-slate-50 rounded-xl relative">
+            <img src="/assets/images/employee_laptop.png" className="w-[45%] h-[45%] object-contain absolute top-1 left-1" />
+            <img src="/assets/images/q7_sso_employee_1790861637507.png" className="w-[45%] h-[45%] object-contain absolute top-1 right-1" />
+            <img src="/assets/images/id_badge.png" className="w-[45%] h-[45%] object-contain absolute bottom-1 left-[27.5%]" />
+          </div>
+        </GIcon>
+        <Arrow active={currentStep >= 1} color="cyan" />
+        <GIcon imgSrc="/assets/images/access_decision.png" active={currentStep >= 1} label="Roles Assigned" subLabel="e.g., Finance" size="medium" color="cyan" />
+        <Arrow active={currentStep >= 2} color="cyan" />
+        <GIcon imgSrc="/assets/images/access_granted.png" active={currentStep >= 2} label="Permissions Granted" subLabel="Access Policy" size="medium" color="cyan" />
+        <Arrow active={currentStep >= 3} color="cyan" />
+        <GIcon imgSrc="/assets/images/email_app.png" active={currentStep >= 3} label="Resources Accessed" subLabel="Payroll System" size="medium" color="cyan" />
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
 
 // Q12 Visual
 const Q12Visual = ({ currentStep, isMobile }: any) => {
