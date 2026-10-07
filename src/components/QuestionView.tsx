@@ -797,7 +797,7 @@ export default function QuestionView({ question, totalCount, onNext, onPrev, isC
 
 
 
-                    <p className="text-[15px] text-slate-600 dark:text-slate-300 leading-[1.85] whitespace-pre-line">
+                    <p className="text-[15px] text-slate-600 dark:text-slate-300 leading-[1.85] whitespace-pre-line break-words">
 
 
 
@@ -849,7 +849,7 @@ export default function QuestionView({ question, totalCount, onNext, onPrev, isC
 
 
 
-                    <div className="text-[15px] text-amber-900 leading-relaxed whitespace-pre-line font-medium">
+                    <div className="text-[15px] text-amber-900 leading-relaxed whitespace-pre-line font-medium break-words">
 
 
 
@@ -1081,10 +1081,10 @@ export default function QuestionView({ question, totalCount, onNext, onPrev, isC
                   <div className="p-4 sm:p-8">
                     {/* Scenario Card */}
                     <div className="bg-brand-blue-light dark:bg-brand-blue/20 dark:border-brand-blue/30 p-5 rounded-xl border border-slate-200 dark:border-slate-700 mb-8 relative">
-                      <p className="text-[16px] text-brand-navy dark:text-white leading-relaxed font-semibold">
+                      <p className="text-[16px] text-brand-navy dark:text-white leading-relaxed font-semibold break-words">
                         {question.practice?.scenario}
                       </p>
-                      <p className="text-[15px] text-slate-600 dark:text-slate-300 mt-3 font-medium">
+                      <p className="text-[15px] text-slate-600 dark:text-slate-300 mt-3 font-medium break-words">
                         {question.practice?.question}
                       </p>
                     </div>
@@ -1136,7 +1136,7 @@ export default function QuestionView({ question, totalCount, onNext, onPrev, isC
                                 optionStyle
                               )}
                             >
-                              <span>{opt}</span>
+                              <span className="break-words whitespace-normal pr-2">{opt}</span>
                               {answered && isCorrect && (
                                 <motion.div initial={{ scale: 0, rotate: -180 }} animate={{ scale: 1, rotate: 0 }} transition={{ type: "spring" }}>
                                   <CheckCircle className="w-6 h-6 shrink-0" />
@@ -1167,7 +1167,7 @@ export default function QuestionView({ question, totalCount, onNext, onPrev, isC
                           )}>
                             {selectedOption === question.practice?.correctAnswer ? "🎯 Brilliant! That's correct." : "💡 Not quite right."}
                           </h4>
-                          <p className="text-[15px] text-slate-700 dark:text-slate-200 leading-relaxed font-medium">
+                          <p className="text-[15px] text-slate-700 dark:text-slate-200 leading-relaxed font-medium break-words">
                             {question.practice?.explanation}
                           </p>
                           

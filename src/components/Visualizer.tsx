@@ -272,7 +272,7 @@ export default function Visualizer({ visualization, currentStep, questionId }: V
         </div>
         
         <div className={clsx(
-          "text-center font-bold text-[14px] leading-tight mb-0.5",
+          "text-center font-bold text-[14px] leading-tight mb-0.5 break-words",
           isActive ? "text-brand-navy dark:text-white" : isCompleted ? "text-slate-800" : "text-slate-500 dark:text-slate-400"
         )}>
           {displayTitle}
@@ -691,10 +691,10 @@ export default function Visualizer({ visualization, currentStep, questionId }: V
                     {idx + 1}
                   </div>
                   
-                  <div className={clsx("text-center font-black text-[12px] leading-tight mb-0.5 tracking-wide", isActive ? "text-brand-navy dark:text-white" : "text-slate-700 dark:text-slate-200")}>
+                  <div className={clsx("text-center font-black text-[12px] leading-tight mb-0.5 tracking-wide break-words", isActive ? "text-brand-navy dark:text-white" : "text-slate-700 dark:text-slate-200")}>
                     {node.title}
                   </div>
-                  <div className="text-[10px] text-slate-500 dark:text-slate-400 font-medium tracking-wide text-center">
+                  <div className="text-[10px] text-slate-500 dark:text-slate-400 font-medium tracking-wide text-center break-words">
                     {node.subtitle}
                   </div>
                   
