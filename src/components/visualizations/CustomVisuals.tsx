@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import clsx from "clsx";
 import { Database } from "lucide-react";
 
-const GIcon = ({ active, label, subLabel, size = "medium", color = "blue", imgSrc }: any) => {
+const GIcon = ({ active, label, subLabel, size = "medium", color = "blue", imgSrc, objectFit = "cover", imgClassName = "" }: any) => {
   const sizeClasses = { small: "w-20 h-20 lg:w-24 lg:h-24", medium: "w-24 h-24 lg:w-28 lg:h-28", large: "w-28 h-28 lg:w-36 lg:h-36" };
   const containerSizes = { small: "w-24 lg:w-28", medium: "w-28 lg:w-36", large: "w-36 lg:w-44" };
   return (
@@ -16,7 +16,7 @@ const GIcon = ({ active, label, subLabel, size = "medium", color = "blue", imgSr
           active ? `border-${color}-500 shadow-${color}-500/30` : "border-slate-200 dark:border-slate-700"
         )}>
         {imgSrc ? (
-          <img src={imgSrc} alt={label} className="w-full h-full object-cover" />
+          <img src={imgSrc} alt={label} className={`w-full h-full object-${objectFit} ${imgClassName}`} />
         ) : (
           <Database size={40} className={active ? `text-${color}-600` : "text-slate-400"} />
         )}
@@ -856,18 +856,18 @@ const Q47Visual = ({ currentStep, isMobile }: any) => {
 
 // Q48 Visual
 const Q48Visual = ({ currentStep, isMobile }: any) => {
-  return (
-    <div className="w-full h-full overflow-x-auto custom-scrollbar pb-4">
-      <div className="flex flex-row flex-nowrap items-center justify-center min-w-max w-full h-full px-4 lg:px-8 py-4 gap-2 lg:gap-4">
-      <GIcon imgSrc="/assets/images/flat_network.png" active={currentStep >= 0} label="Flat Network" subLabel="Old Way..." size="medium" color="sky" />
-      <Arrow active={currentStep >= 1} color="sky" />
-      <GIcon imgSrc="/assets/images/micro_segmented.png" active={currentStep >= 1} label="Breach" subLabel="Everything Connects..." size="medium" color="sky" />
-      <Arrow active={currentStep >= 2} color="sky" />
-      <GIcon imgSrc="/assets/images/siem_alert.png" active={currentStep >= 2} label="Micro-Segmented" subLabel="Attacker Moves..." size="medium" color="sky" />
+    return (
+      <div className="w-full h-full overflow-x-auto custom-scrollbar pb-4">
+        <div className="flex flex-row flex-nowrap items-center justify-center min-w-max w-full h-full px-4 lg:px-8 py-4 gap-2 lg:gap-4">
+        <GIcon objectFit="contain" imgClassName="p-0 scale-[1.3] object-center" imgSrc="/assets/images/flat_network.png" active={currentStep >= 0} label="Flat Network" subLabel="Old Way..." size="medium" color="sky" />
+        <Arrow active={currentStep >= 1} color="sky" />
+        <GIcon objectFit="contain" imgClassName="p-1 object-center" imgSrc="/assets/images/micro_segmented.png" active={currentStep >= 1} label="Breach" subLabel="Everything Connects..." size="medium" color="sky" />
+        <Arrow active={currentStep >= 2} color="sky" />
+        <GIcon objectFit="contain" imgClassName="p-1 object-center" imgSrc="/assets/images/siem_alert.png" active={currentStep >= 2} label="Micro-Segmented" subLabel="Attacker Moves..." size="medium" color="sky" />
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
 
 // Q49 Visual
 const Q49Visual = ({ currentStep, isMobile }: any) => {
