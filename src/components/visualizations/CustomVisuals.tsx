@@ -786,9 +786,9 @@ const Q43Visual = ({ currentStep, isMobile }: any) => {
       <div className="flex flex-row flex-nowrap items-center justify-center min-w-max w-full h-full px-4 lg:px-8 py-4 gap-2 lg:gap-4">
       <GIcon imgSrc="/assets/images/policy_engine.png" active={currentStep >= 0} label="Assess Context" subLabel="System Checks..." size="medium" color="cyan" />
       <Arrow active={currentStep >= 1} color="cyan" />
-      <GIcon imgSrc="/assets/images/jit_access.png" active={currentStep >= 1} label="Low Risk" subLabel="Time..." size="medium" color="cyan" />
+      <GIcon imgSrc="/assets/images/access_granted.png" active={currentStep >= 1} label="Low Risk" subLabel="Time..." size="medium" color="cyan" />
       <Arrow active={currentStep >= 2} color="cyan" />
-      <GIcon imgSrc="/assets/images/employee_laptop.png" active={currentStep >= 2} label="High Risk" subLabel="And Device..." size="medium" color="cyan" />
+      <GIcon imgSrc="/assets/images/threat_detected.png" active={currentStep >= 2} label="High Risk" subLabel="And Device..." size="medium" color="cyan" />
       </div>
     </div>
   );
