@@ -15,7 +15,7 @@ const GIcon = ({ active, label, subLabel, size = "medium", color = "blue", imgSr
           sizeClasses[size as keyof typeof sizeClasses],
           active ? `border-${color}-500 shadow-${color}-500/30` : "border-slate-200 dark:border-slate-700"
         )}>
-        {imgSrc ? (
+        {children ? ( children ) : imgSrc ? (
           <img src={imgSrc} alt={label} className={`w-full h-full object-${objectFit} ${imgClassName}`} />
         ) : (
           <Database size={40} className={active ? `text-${color}-600` : "text-slate-400"} />
