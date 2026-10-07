@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import clsx from "clsx";
 import { Database } from "lucide-react";
 
-const GIcon = ({ active, label, subLabel, size = "medium", color = "blue", imgSrc, objectFit = "cover", imgClassName = "" }: any) => {
+const GIcon = ({ active, label, subLabel, size = "medium", color = "blue", imgSrc, objectFit = "contain", imgClassName = "" }: any) => {
   const sizeClasses = { small: "w-20 h-20 lg:w-24 lg:h-24", medium: "w-24 h-24 lg:w-28 lg:h-28", large: "w-28 h-28 lg:w-36 lg:h-36" };
   const containerSizes = { small: "w-24 lg:w-28", medium: "w-28 lg:w-36", large: "w-36 lg:w-44" };
   return (
@@ -484,7 +484,7 @@ const Q23Visual = ({ currentStep, isMobile }: any) => {
       <Arrow active={currentStep >= 1} color="cyan" />
       <GIcon imgSrc="/assets/images/rbac_roles.png" active={currentStep >= 1} label="Policy Engine" subLabel="Device..." size="medium" color="cyan" />
       <Arrow active={currentStep >= 2} color="cyan" />
-      <GIcon imgSrc="/assets/images/abac_location_office_1790829555589.png" active={currentStep >= 2} label="Access Decision" subLabel="And Location..." size="medium" color="cyan" />
+      <GIcon imgSrc="/assets/images/access_decision.png" active={currentStep >= 2} label="Access Decision" subLabel="And Location..." size="medium" color="cyan" />
       </div>
     </div>
   );
@@ -797,7 +797,7 @@ const Q44Visual = ({ currentStep, isMobile }: any) => {
   return (
     <div className="w-full h-full overflow-x-auto custom-scrollbar pb-4">
       <div className="flex flex-row flex-nowrap items-center justify-center min-w-max w-full h-full px-4 lg:px-8 py-4 gap-2 lg:gap-4">
-      <GIcon imgSrc="/assets/images/flat_network.png" active={currentStep >= 0} label="Gather Signals" subLabel="Collect IP..." size="medium" color="sky" />
+      <GIcon imgSrc="/assets/images/device_attribute.png" active={currentStep >= 0} label="Gather Signals" subLabel="Collect IP..." size="medium" color="sky" />
       <Arrow active={currentStep >= 1} color="sky" />
       <GIcon imgSrc="/assets/images/abac_device_laptop_1790829588514.png" active={currentStep >= 1} label="Calculate Score" subLabel="Device ID..." size="medium" color="sky" />
       <Arrow active={currentStep >= 2} color="sky" />
@@ -829,7 +829,7 @@ const Q46Visual = ({ currentStep, isMobile }: any) => {
       <div className="flex flex-row flex-nowrap items-center justify-center min-w-max w-full h-full px-4 lg:px-8 py-4 gap-2 lg:gap-4">
       <GIcon imgSrc="/assets/images/abac_device_laptop_1790829588514.png" active={currentStep >= 0} label="Device Connects" subLabel="Device Requests..." size="medium" color="indigo" />
       <Arrow active={currentStep >= 1} color="indigo" />
-      <GIcon imgSrc="/assets/images/access_decision.png" active={currentStep >= 1} label="Posture Check" subLabel="Agent Checks..." size="medium" color="indigo" />
+      <GIcon imgSrc="/assets/images/posture_check.png" active={currentStep >= 1} label="Posture Check" subLabel="Agent Checks..." size="medium" color="indigo" />
       <Arrow active={currentStep >= 2} color="indigo" />
       <GIcon imgSrc="/assets/images/abac_location_office_1790829555589.png" active={currentStep >= 2} label="Access Decision" subLabel="Encryption..." size="medium" color="indigo" />
       </div>
@@ -844,9 +844,9 @@ const Q47Visual = ({ currentStep, isMobile }: any) => {
       <div className="flex flex-row flex-nowrap items-center justify-center min-w-max w-full h-full px-4 lg:px-8 py-4 gap-2 lg:gap-4">
       <GIcon imgSrc="/assets/images/auth_password.png" active={currentStep >= 0} label="Initial Login" subLabel="User Passes..." size="medium" color="cyan" />
       <Arrow active={currentStep >= 1} color="cyan" />
-      <GIcon imgSrc="/assets/images/q7_sso_employee_1790861637507.png" active={currentStep >= 1} label="Session Active" subLabel="User Works..." size="medium" color="cyan" />
+      <GIcon imgSrc="/assets/images/active_session.png" active={currentStep >= 1} label="Session Active" subLabel="User Works..." size="medium" color="cyan" />
       <Arrow active={currentStep >= 2} color="cyan" />
-      <GIcon imgSrc="/assets/images/abac_device_laptop_1790829588514.png" active={currentStep >= 2} label="Threat Detected" subLabel="Device Downloads..." size="medium" color="cyan" />
+      <GIcon imgSrc="/assets/images/threat_detected.png" active={currentStep >= 2} label="Threat Detected" subLabel="Device Downloads..." size="medium" color="cyan" />
       <Arrow active={currentStep >= 3} color="cyan" />
       <GIcon imgSrc="/assets/images/account_suspended.png" active={currentStep >= 3} label="Session Terminated" subLabel="Access Revoked" size="medium" color="cyan" />
       </div>
