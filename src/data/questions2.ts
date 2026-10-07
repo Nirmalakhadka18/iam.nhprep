@@ -159,7 +159,7 @@ export const questions2 = [
       question: "This is a failure of which lifecycle phase?",
       options: ["Joiner", "Mover", "Leaver"],
       correctAnswer: 1,
-      explanation: "The 'Mover' phase requires adding new access and removing unneeded access to prevent permission creep. In modern AWS environments, identity lifecycle is rarely managed in AWS IAM directly; it is typically delegated to an external IdP via AWS IAM Identity Center."
+      explanation: "The 'Mover' phase requires adding new access and removing unneeded access to prevent permission creep. In AWS environments, the lifecycle for human identities is often delegated to an external IdP via AWS IAM Identity Center, while AWS IAM directly manages machine identities and service roles."
     }
   },
   {
@@ -382,7 +382,7 @@ export const questions2 = [
       question: "Which technology is specifically designed for this?",
       options: ["SSO", "PAM", "Antivirus", "Firewall"],
       correctAnswer: 1,
-      explanation: "Privileged Access Management (PAM) solutions typically include Vaulting, Session Monitoring, and Recording capabilities. While AWS integrates with third-party PAM vaults (e.g., CyberArk), AWS natively supports PAM session recording via Systems Manager Session Manager."
+      explanation: "Privileged Access Management (PAM) solutions typically include Vaulting, Session Monitoring, and Recording capabilities. AWS integrates with full third-party PAM platforms (like CyberArk) and complements them by providing native session logging and recording capabilities through AWS Systems Manager Session Manager."
     }
   },
   {
@@ -865,7 +865,7 @@ export const questions2 = [
       question: "Which Zero Trust principle made this possible?",
       options: ["Least Privilege", "SSO", "Continuous Verification", "Identity Federation"],
       correctAnswer: 2,
-      explanation: "Constantly evaluating the session for risk and revoking it mid-flight is the Continuous Verification ideal. In AWS, this is supported for specific services via IAM Continuous Access Evaluation (CAE) which can terminate active STS sessions upon policy changes."
+      explanation: "Constantly evaluating the session for risk and revoking it mid-flight is the Continuous Verification ideal. In AWS, session revocation can occur automatically when certain IAM policies change, though AWS does not currently enforce a universal continuous-verification engine across all data-plane sessions."
     }
   },
   {

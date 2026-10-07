@@ -101,7 +101,7 @@ const questions1 = [
         "Yes, but it must use the IT manager's personal identity."
       ],
       "correctAnswer": 1,
-      "explanation": "Scripts, applications, and devices also need digital identities (often called service accounts or workload identities). In AWS, these map directly to IAM Users (for external workloads) or IAM Roles (assumed by AWS services like EC2)."
+      "explanation": "Scripts, applications, and devices also need digital identities (often called service accounts or workload identities). In AWS, workloads should ideally map to IAM Roles (using mechanisms like IAM Roles Anywhere or temporary credentials) rather than using long-term IAM User access keys."
     }
   },
   {
@@ -257,7 +257,7 @@ const questions1 = [
         "Both equally"
       ],
       "correctAnswer": 1,
-      "explanation": "Restricting access based on a user's group (Finance team) to a specific resource (financial records) is an Authorization control. In AWS, Authentication is typically handled via Identity Center or STS, while Authorization relies on evaluating IAM Policies."
+      "explanation": "Restricting access based on a user's group (Finance team) to a specific resource (financial records) is an Authorization control. In AWS, Authentication is typically handled via AWS IAM Identity Center or an external IdP. AWS STS then issues temporary credentials, while Authorization relies on evaluating IAM Policies."
     }
   },
   {
@@ -783,7 +783,7 @@ const questions1 = [
         "A Service Account"
       ],
       "correctAnswer": 0,
-      "explanation": "This is a technical rule that defines who is allowed to do what to a resource. In AWS, an IAM policy specifically requires defining the Effect (Allow/Deny), Principal, Action, Resource, and optional Conditions."
+      "explanation": "This is a technical rule that defines who is allowed to do what to a resource. In AWS, policy elements depend on the policy type. Resource-based policies require a Principal, but identity-based policies do not. Both require Effect, Action, and Resource, with optional Conditions."
     }
   },
   {
