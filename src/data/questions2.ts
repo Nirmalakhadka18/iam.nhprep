@@ -747,14 +747,14 @@ export const questions2 = [
     category: "Authentication",
     answer: {
       definition: "Risk-based authentication evaluates signals to calculate a risk score to estimate whether a login attempt appears malicious.",
-      howItWorks: "Signals (Impossible travel, Suspicious IP, Unseen device) â†’ Risk Engine â†’ Low/Medium/High Risk Score â†’ Policy Decision.",
+      howItWorks: "Risk signals such as location anomalies (e.g., impossible-travel patterns), suspicious IP reputation, or unrecognized devices are fed into a risk engine. Risk Engine ? Low/Medium/High Risk Score ? Policy Decision.",
       example: "A login from London at 1:00 PM, followed by a login from Tokyo at 1:05 PM triggers an 'Impossible Travel' high-risk flag, blocking the login.",
       whyImportant: "It stops attackers who have stolen valid passwords by recognizing that their behavior/location doesn't match the real user.",
       commonMistakes: [
         "Assuming risk-based authentication is a replacement for passwords (it works ALONGSIDE passwords)."
       ],
       interviewPoints: [
-        "Key concept: 'Impossible Travel'.",
+        "Common risk signals include impossible-travel patterns, unfamiliar devices, and suspicious IP addresses � the exact signals depend on the identity provider or risk engine.",
         "It relies heavily on machine learning and behavioral analytics."
       ],
       sampleAnswer: "Risk-based authentication evaluates contextual signals during login and can require additional verification or deny access when the risk is considered high."
@@ -769,7 +769,7 @@ export const questions2 = [
       question: "What specific metric will flag this behavior?",
       options: ["Just-In-Time Access", "Impossible Travel", "Role-Based Access", "SSO Assertion"],
       correctAnswer: 1,
-      explanation: "Logging in from locations physically impossible to travel between in a given timeframe is flagged as 'Impossible Travel'. This risk-based concept is supported across various SIEMs and IdPs, including AWS GuardDuty and Amazon Cognito."
+      explanation: "Logging in from locations physically impossible to travel between in a given timeframe is a classic impossible-travel pattern. Many identity providers and SIEMs can detect this. For example, Amazon Cognito Advanced Security and Microsoft Entra ID support similar risk signals � though the exact implementation and naming varies by vendor."
     }
   },
   {
@@ -844,7 +844,7 @@ export const questions2 = [
     answer: {
       definition: "Continuous verification means access decisions are constantly reevaluated, not just checked once at login.",
       howItWorks: "User logs in (Checked) â†’ 2 hours later, device turns off antivirus â†’ System detects state change (Re-evaluates) â†’ Session Killed.",
-      example: "If a user's location suddenly changes to another country in the middle of an active session, the system instantly revokes their tokens and demands re-authentication.",
+      example: "If a user's location suddenly changes to another country in the middle of an active session, the system can detect this anomaly and terminate the session or require re-authentication. The speed of enforcement depends on whether short-lived tokens, Continuous Access Evaluation (CAE), or session invalidation APIs are in place.",
       whyImportant: "Traditional security assumed 'once you are in, you are trusted for the whole day.' Zero Trust assumes you could be compromised at any second.",
       commonMistakes: [
         "Relying on session tokens that last 30 days without ever re-checking device health."
@@ -861,7 +861,7 @@ export const questions2 = [
       stepExplanations: ["User passes initial checks.", "User works normally.", "Device downloads malware mid-session.", "Continuous Evaluation immediately revokes access."]
     },
     practice: {
-      scenario: "A user logs in successfully at 9 AM. At 11 AM, their laptop gets infected with malware. The IAM system instantly revokes their active session tokens.",
+      scenario: "A user logs in successfully at 9 AM. At 11 AM, their laptop gets infected with malware. The Zero Trust system detects the device state change and terminates the active session.",
       question: "Which Zero Trust principle made this possible?",
       options: ["Least Privilege", "SSO", "Continuous Verification", "Identity Federation"],
       correctAnswer: 2,
