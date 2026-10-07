@@ -29,7 +29,7 @@ export const questions2 = [
       question: "According to Least Privilege, what level of access should they receive?",
       options: ["Admin access", "Read-only access to metrics", "Read/Write access to campaigns", "No access"],
       correctAnswer: 1,
-      explanation: "They only need to view the metrics, so read-only access is the minimum required permission."
+      explanation: "They only need to view the metrics, so read-only access is the minimum required permission. Note: In AWS, this identity-based Allow can still be overridden by an Explicit Deny from an SCP or Permissions Boundary."
     }
   },
   {
@@ -477,7 +477,7 @@ export const questions2 = [
       question: "What type of account did the attacker steal?",
       options: ["Standard User Account", "Service Account", "Privileged Account", "Guest Account"],
       correctAnswer: 2,
-      explanation: "An account with the power to destroy or manage infrastructure is a Privileged Account."
+      explanation: "An account with the power to destroy or manage infrastructure is a Privileged Account. Note: In AWS, even highly privileged identities (like AdministratorAccess) can be constrained by an Organizations SCP or a Permissions Boundary."
     }
   },
   {

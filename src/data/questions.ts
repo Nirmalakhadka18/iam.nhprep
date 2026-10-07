@@ -53,7 +53,7 @@ const questions1 = [
         "The Database Server"
       ],
       "correctAnswer": 1,
-      "explanation": "The IAM system is responsible for managing the user's identity lifecycle, including creating their account and assigning them appropriate roles and permissions."
+      "explanation": "The IAM system is responsible for managing the user's identity lifecycle, including creating their account and assigning them appropriate roles and permissions. Note: In AWS, an identity-based Allow is not necessarily sufficient for access; it can be constrained by an Explicit Deny, Permissions Boundary, or AWS Organizations SCP."
     }
   },
   {
@@ -209,7 +209,7 @@ const questions1 = [
         "She entered the wrong password."
       ],
       "correctAnswer": 2,
-      "explanation": "Since she successfully logged in, authentication passed. She lacks the specific permissions to perform the action, which is an Authorization failure."
+      "explanation": "Since she successfully logged in, authentication passed. She lacks the specific permissions to perform the action, which is an Authorization failure. Note: In AWS, this failure could be due to a lack of an identity-based Allow, OR an Explicit Deny from an SCP or Permissions Boundary."
     }
   },
   {
