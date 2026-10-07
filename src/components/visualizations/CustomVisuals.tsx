@@ -93,9 +93,9 @@ const Q2Visual = ({ currentStep, isMobile }: any) => {
   return (
     <div className="w-full h-full overflow-x-auto custom-scrollbar pb-4">
       <div className="flex flex-row flex-nowrap items-center justify-center min-w-max w-full h-full px-4 lg:px-8 py-4 gap-2 lg:gap-4">
-      <GIcon imgSrc="/assets/images/employee_laptop.png" active={currentStep >= 0} label="Person" subLabel="" size="medium" color="indigo" />
+      <GIcon imgSrc="/assets/images/employee_laptop.png" active={currentStep >= 0} label="Human / Workload" subLabel="" size="medium" color="indigo" />
       <Arrow active={currentStep >= 1} color="indigo" />
-      <GIcon imgSrc="/assets/images/user_request.png" active={currentStep >= 1} label="Employee information" subLabel="HR Collects..." size="medium" color="indigo" />
+      <GIcon imgSrc="/assets/images/user_request.png" active={currentStep >= 1} label="Identity Attributes" subLabel="HR Collects..." size="medium" color="indigo" />
       <Arrow active={currentStep >= 2} color="indigo" />
       <GIcon imgSrc="/assets/images/id_badge.png" active={currentStep >= 2} label="Digital Identity" subLabel="Department..." size="medium" color="indigo" />
       </div>
@@ -148,9 +148,9 @@ const Q5Visual = ({ currentStep, isMobile }: any) => {
   return (
     <div className="w-full h-full overflow-x-auto custom-scrollbar pb-4">
       <div className="flex flex-row flex-nowrap items-center justify-center min-w-max w-full h-full px-4 lg:px-8 py-4 gap-2 lg:gap-4">
-      <GIcon imgSrc="/assets/images/auth_password.png" active={currentStep >= 0} label="WHO ARE YOU?" subLabel="Authentication..." size="medium" color="blue" />
+      <GIcon imgSrc="/assets/images/auth_password.png" active={currentStep >= 0} label="WHO ARE YOU? (AuthN)" subLabel="Authentication..." size="medium" color="blue" />
       <Arrow active={currentStep >= 1} color="blue" />
-      <GIcon imgSrc="/assets/images/mfa_phone.png" active={currentStep >= 1} label="WHAT CAN YOU DO?" subLabel="Authorization..." size="medium" color="blue" />
+      <GIcon imgSrc="/assets/images/mfa_phone.png" active={currentStep >= 1} label="WHAT CAN YOU DO? (AuthZ)" subLabel="Authorization..." size="medium" color="blue" />
       </div>
     </div>
   );
@@ -239,7 +239,7 @@ const Q10Visual = ({ currentStep, isMobile }: any) => {
       <div className="flex flex-row flex-nowrap items-center justify-center min-w-max w-full h-full px-4 lg:px-8 py-4 gap-2 lg:gap-4">
       <GIcon imgSrc="/assets/images/user_request.png" active={currentStep >= 0} label="User" subLabel="End User" size="medium" color="indigo" />
       <Arrow active={currentStep >= 1} color="indigo" />
-      <GIcon imgSrc="/assets/images/q7_sso_employee_1790861637507.png" active={currentStep >= 1} label="Role" subLabel="Assigned Role" size="medium" color="indigo" />
+      <GIcon imgSrc="/assets/images/q7_sso_employee_1790861637507.png" active={currentStep >= 1} label="Assumes Role" subLabel="Assigned Role" size="medium" color="indigo" />
       <Arrow active={currentStep >= 2} color="indigo" />
       <GIcon imgSrc="/assets/images/rbac_roles.png" active={currentStep >= 2} label="Permissions" subLabel="Developer)..." size="medium" color="indigo" />
       <Arrow active={currentStep >= 3} color="indigo" />
@@ -467,7 +467,7 @@ const Q22Visual = ({ currentStep, isMobile }: any) => {
       <div className="flex flex-row flex-nowrap items-center justify-center min-w-max w-full h-full px-4 lg:px-8 py-4 gap-2 lg:gap-4">
       <GIcon imgSrc="/assets/images/user_request.png" active={currentStep >= 0} label="User" subLabel="End User" size="medium" color="indigo" />
       <Arrow active={currentStep >= 1} color="indigo" />
-      <GIcon imgSrc="/assets/images/abac_user_finance_1790829544274.png" active={currentStep >= 1} label="Role Assignment" subLabel="Assigned Role" size="medium" color="indigo" />
+      <GIcon imgSrc="/assets/images/abac_user_finance_1790829544274.png" active={currentStep >= 1} label="Assumes Role / Group" subLabel="Assigned Role" size="medium" color="indigo" />
       <Arrow active={currentStep >= 2} color="indigo" />
       <GIcon imgSrc="/assets/images/rbac_roles.png" active={currentStep >= 2} label="Permissions" subLabel="Assigned Role" size="medium" color="indigo" />
       </div>
@@ -617,7 +617,7 @@ const Q32Visual = ({ currentStep, isMobile }: any) => {
       <div className="flex flex-row flex-nowrap items-center justify-center min-w-max w-full h-full px-4 lg:px-8 py-4 gap-2 lg:gap-4">
       <GIcon imgSrc="/assets/images/abac_location_office_1790829555589.png" active={currentStep >= 0} label="Admin Request" subLabel="Admin Requests..." size="medium" color="sky" />
       <Arrow active={currentStep >= 1} color="sky" />
-      <GIcon imgSrc="/assets/images/server_resource.png" active={currentStep >= 1} label="PAM Vault Approval" subLabel="Policy Check" size="medium" color="sky" />
+      <GIcon imgSrc="/assets/images/server_resource.png" active={currentStep >= 1} label="Elevation Approval" subLabel="Policy Check" size="medium" color="sky" />
       <Arrow active={currentStep >= 2} color="sky" />
       <GIcon imgSrc="/assets/images/abac_time_clock_1790829568155.png" active={currentStep >= 2} label="Temporary Session" subLabel="Time-Bound" size="medium" color="sky" />
       </div>

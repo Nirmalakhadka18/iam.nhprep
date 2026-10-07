@@ -101,7 +101,7 @@ const questions1 = [
         "Yes, but it must use the IT manager's personal identity."
       ],
       "correctAnswer": 1,
-      "explanation": "Scripts, applications, and devices also need digital identities (often called service accounts or workload identities) so the system can verify them and restrict what they can do."
+      "explanation": "Scripts, applications, and devices also need digital identities (often called service accounts or workload identities). In AWS, these map directly to IAM Users (for external workloads) or IAM Roles (assumed by AWS services like EC2)."
     }
   },
   {
@@ -257,7 +257,7 @@ const questions1 = [
         "Both equally"
       ],
       "correctAnswer": 1,
-      "explanation": "Restricting access based on a user's group (Finance team) to a specific resource (financial records) is an Authorization control."
+      "explanation": "Restricting access based on a user's group (Finance team) to a specific resource (financial records) is an Authorization control. In AWS, Authentication is typically handled via Identity Center or STS, while Authorization relies on evaluating IAM Policies."
     }
   },
   {
@@ -523,7 +523,7 @@ const questions1 = [
         "Share a generic admin password with the user."
       ],
       "correctAnswer": 1,
-      "explanation": "Best practice is to group related permissions into a Role, and then assign the Role to the user. This simplifies future administration."
+      "explanation": "Best practice is to group related permissions into a Role. In traditional RBAC, roles are directly assigned to users. In AWS, an IAM Role is an independent identity assumed via STS (returning temporary credentials), while users are typically grouped in IAM Groups."
     }
   },
   {
@@ -783,7 +783,7 @@ const questions1 = [
         "A Service Account"
       ],
       "correctAnswer": 0,
-      "explanation": "This is a technical rule that defines who is allowed to do what to a resource, which is the exact definition of an Access Policy."
+      "explanation": "This is a technical rule that defines who is allowed to do what to a resource. In AWS, an IAM policy specifically requires defining the Effect (Allow/Deny), Principal, Action, Resource, and optional Conditions."
     }
   },
   {

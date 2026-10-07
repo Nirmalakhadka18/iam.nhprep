@@ -62,7 +62,7 @@ export const questions2 = [
       question: "What access control model is this?",
       options: ["ABAC", "MAC", "RBAC", "DAC"],
       correctAnswer: 2,
-      explanation: "Grouping permissions by job function or group is the core concept of Role-Based Access Control (RBAC)."
+      explanation: "Grouping permissions by job function is the core concept of Role-Based Access Control (RBAC). In AWS, this is typically implemented by attaching managed policies to IAM Groups, or by having users assume IAM Roles via STS, rather than directly 'assigning' a role to a user."
     }
   },
   {
@@ -94,7 +94,7 @@ export const questions2 = [
       question: "Which access control model is being used?",
       options: ["RBAC", "ABAC", "MAC", "DAC"],
       correctAnswer: 1,
-      explanation: "Because the system is evaluating environmental and device attributes (patch level, location) rather than just a role, this is ABAC."
+      explanation: "Because the system is evaluating environmental and contextual attributes (e.g., location or Resource Tags) rather than just a role, this is ABAC. In AWS IAM, ABAC leverages condition keys like aws:PrincipalTag and aws:SourceIp."
     }
   },
   {
@@ -159,7 +159,7 @@ export const questions2 = [
       question: "This is a failure of which lifecycle phase?",
       options: ["Joiner", "Mover", "Leaver"],
       correctAnswer: 1,
-      explanation: "The 'Mover' phase requires both adding new access AND removing access that is no longer needed to prevent permission creep."
+      explanation: "The 'Mover' phase requires adding new access and removing unneeded access to prevent permission creep. In modern AWS environments, identity lifecycle is rarely managed in AWS IAM directly; it is typically delegated to an external IdP via AWS IAM Identity Center."
     }
   },
   {
@@ -382,7 +382,7 @@ export const questions2 = [
       question: "Which technology is specifically designed for this?",
       options: ["SSO", "PAM", "Antivirus", "Firewall"],
       correctAnswer: 1,
-      explanation: "Privileged Access Management (PAM) solutions typically include Session Monitoring and Recording capabilities."
+      explanation: "Privileged Access Management (PAM) solutions typically include Vaulting, Session Monitoring, and Recording capabilities. While AWS integrates with third-party PAM vaults (e.g., CyberArk), AWS natively supports PAM session recording via Systems Manager Session Manager."
     }
   },
   {
@@ -414,7 +414,7 @@ export const questions2 = [
       question: "This strategy is known as:",
       options: ["Just-In-Time Access", "SSO", "Role-Based Access", "Federation"],
       correctAnswer: 0,
-      explanation: "Granting access dynamically for a limited time frame is the definition of Just-In-Time (JIT) access."
+      explanation: "Granting access dynamically for a limited time frame is the definition of Just-In-Time (JIT) access. A complete JIT workflow involves requests, approvals, and provisioning. In AWS, STS temporary credentials provide the time-bound mechanism to enforce JIT access."
     }
   },
   {
@@ -445,7 +445,7 @@ export const questions2 = [
       question: "This is a perfect example of:",
       options: ["Just-In-Time Access", "Just-Enough Access", "Identity Federation", "ABAC"],
       correctAnswer: 1,
-      explanation: "Restricting the scope of what an admin can do to exactly what they need is Just-Enough Access (JEA)."
+      explanation: "Restricting the scope of what an admin can do to exactly what they need is the security goal of Just-Enough Access (JEA). In AWS, JEA can be technically implemented during role assumption by passing a Session Policy to dynamically constrain permissions."
     }
   },
   {
@@ -737,7 +737,7 @@ export const questions2 = [
       question: "What kind of system is this?",
       options: ["Static MFA", "Adaptive Authentication", "SAML", "RBAC"],
       correctAnswer: 1,
-      explanation: "Because the authentication requirements adapted dynamically based on the location/network context, this is Adaptive Authentication."
+      explanation: "Because authentication requirements adapted dynamically based on location/network context, this is Adaptive Authentication. This broad industry concept is supported in AWS via Amazon Cognito Advanced Security Features (ASF)."
     }
   },
   {
@@ -769,7 +769,7 @@ export const questions2 = [
       question: "What specific metric will flag this behavior?",
       options: ["Just-In-Time Access", "Impossible Travel", "Role-Based Access", "SSO Assertion"],
       correctAnswer: 1,
-      explanation: "Logging in from locations that are physically impossible to travel between in the given timeframe is flagged as 'Impossible Travel'."
+      explanation: "Logging in from locations physically impossible to travel between in a given timeframe is flagged as 'Impossible Travel'. This risk-based concept is supported across various SIEMs and IdPs, including AWS GuardDuty and Amazon Cognito."
     }
   },
   {
@@ -865,7 +865,7 @@ export const questions2 = [
       question: "Which Zero Trust principle made this possible?",
       options: ["Least Privilege", "SSO", "Continuous Verification", "Identity Federation"],
       correctAnswer: 2,
-      explanation: "Constantly evaluating the session for risk and revoking it mid-flight is Continuous Verification."
+      explanation: "Constantly evaluating the session for risk and revoking it mid-flight is the Continuous Verification ideal. In AWS, this is supported for specific services via IAM Continuous Access Evaluation (CAE) which can terminate active STS sessions upon policy changes."
     }
   },
   {
@@ -967,7 +967,7 @@ export const questions2 = [
         "No, but only if they are an admin."
       ],
       correctAnswer: 2,
-      explanation: "In Zero Trust, proving who you are (Authentication) does not guarantee you are allowed to access a specific resource from your current device/location (Authorization)."
+      explanation: "In Zero Trust, proving who you are (Authentication) does not guarantee you are allowed to access a specific resource from your current device/location (Authorization). A standard AWS reference architecture for this combines IAM Identity Center, AWS Verified Access, and IAM Policies."
     }
   }
 ];
