@@ -859,11 +859,11 @@ const Q48Visual = ({ currentStep, isMobile }: any) => {
     return (
       <div className="w-full h-full overflow-x-auto custom-scrollbar pb-4">
         <div className="flex flex-row flex-nowrap items-center justify-center min-w-max w-full h-full px-4 lg:px-8 py-4 gap-2 lg:gap-4">
-        <GIcon objectFit="contain" imgClassName="p-0 scale-[1.3] object-center" imgSrc="/assets/images/flat_network.png" active={currentStep >= 0} label="Flat Network" subLabel="Old Way..." size="medium" color="sky" />
+        <GIcon objectFit="contain" imgClassName="p-1 object-center" imgSrc="/assets/images/flat_network.png" active={currentStep >= 0} label="Flat Network" subLabel="Old Way..." size="medium" color="sky" />
         <Arrow active={currentStep >= 1} color="sky" />
-        <GIcon objectFit="contain" imgClassName="p-1 object-center" imgSrc="/assets/images/micro_segmented.png" active={currentStep >= 1} label="Breach" subLabel="Everything Connects..." size="medium" color="sky" />
+        <GIcon objectFit="contain" imgClassName="p-1 object-center" imgSrc="/assets/images/network_breach.png" active={currentStep >= 1} label="Breach" subLabel="Everything Connects..." size="medium" color="sky" />
         <Arrow active={currentStep >= 2} color="sky" />
-        <GIcon objectFit="contain" imgClassName="p-1 object-center" imgSrc="/assets/images/siem_alert.png" active={currentStep >= 2} label="Micro-Segmented" subLabel="Attacker Moves..." size="medium" color="sky" />
+        <GIcon objectFit="contain" imgClassName="p-1 object-center" imgSrc="/assets/images/micro_segmented.png" active={currentStep >= 2} label="Micro-Segmented" subLabel="Attacker Moves..." size="medium" color="sky" />
         </div>
       </div>
     );
